@@ -1,5 +1,4 @@
 import React from 'react'
-import useCursorHover from '../../customHooks/useCursorHover'
 
 const HomeImages = () => {
     return (

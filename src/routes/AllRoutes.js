@@ -1,18 +1,24 @@
 import React from 'react'
+import { AnimatePresence } from "framer-motion";
 import {
-    BrowserRouter as Router,
     Routes,
-    Switch,
     Route,
-    Link
+    useLocation,
   } from "react-router-dom";
   import HomePage from './HomePage';
 
 const AllRoutes = () => {
+  const location  = useLocation()
+
   return (
+    <AnimatePresence location={location} key={location.pathname} >
     <Routes>
-        <Route path="/" element={<HomePage  />} />
+        <Route exact path="/" element={<HomePage  />} />
+        <Route exact path="/about" element={<HomePage  />} />
+
     </Routes>
+    </AnimatePresence>
+      
   )
 }
 

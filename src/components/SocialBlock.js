@@ -3,10 +3,7 @@ import SocialLink from './SocialLink'
 import gsap from 'gsap'
 
 const SocialBlock = () => {
-    const socialRef1 = useRef()
-    const socialRef2 = useRef()
-    const socialRef3 = useRef()
-    const socialRef4 = useRef()
+
     const socialRef = useRef()
 
     useEffect(() => {
