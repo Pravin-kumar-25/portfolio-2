@@ -5,19 +5,21 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 import AllRoutes from './routes/AllRoutes';
+import ContactPage from './pages/ContactPage';
 
 function App() {
 
 
   return (
     <div className="App">
-     <Cursor />
+      <Cursor />
       <Router>
         <Navbar />
-      <div className='container'>
-        <AllRoutes />
-      </div>
+        <div className='container'>
+          <AllRoutes />
+        </div>
       </Router>
+      <ContactPage />
     </div>
   );
 }

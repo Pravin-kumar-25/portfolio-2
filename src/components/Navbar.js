@@ -15,7 +15,6 @@ const Navbar = () => {
                     <NavLink path='/' link='HOME' isSelected={path === ''} />
                     <NavLink path='/project' link='PROJECTS' isSelected={path === 'project'} />
                     <NavLink path='/about' link='ABOUT' isSelected={path === 'about'} />
-                    <NavLink path='/contact' link='CONTACT' isSelected={path === 'contact'} />
                 </div>
             </div>
         </nav>
