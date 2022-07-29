@@ -2,14 +2,16 @@ import React from 'react'
 import { Drawer } from '@mui/material'
 import ContactMeForm from './ContactMeForm'
 import ContactInfo from './ContactInfo'
+import Map from './Map'
+import ContactImage from './ContactImage'
 
 const ContactMePage = ({ active, setActive }) => {
     let paperStyle = {
-        width: '500px',
-        display:'flex',
-        justifyContent:'space-between',
+        // width: '500px',
+        display: 'flex',
+        justifyContent: 'space-between',
         background: '#C7c000',
-        alignItems:'center',
+        alignItems: 'center',
     }
 
     let style = {
@@ -21,12 +23,15 @@ const ContactMePage = ({ active, setActive }) => {
             open={active}
             onClose={() => setActive(false)}
             sx={style}
-            PaperProps={{sx:paperStyle}}
+            PaperProps={{ sx: paperStyle }}
         >
-            <div className='contactImage'>
-                <img src='/images/ContactMe.png' alt='contact-me' />
+            <div className='contact'>
+                <ContactImage />
+                <div className='contactFormAndMap'>
+                    <ContactMeForm />
+                    <Map />
+                </div>
             </div>
-            <ContactMeForm />
             <ContactInfo />
         </Drawer>
     )

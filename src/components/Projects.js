@@ -1,35 +1,45 @@
-import React, {useEffect,useRef} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ProjectImage from './ProjectImage'
 import gsap from 'gsap'
-
+import { motion } from 'framer-motion'
+import Loader from './Loader'
 
 const Projects = () => {
     const listRef = useRef()
+    const [showContent, setShowContent] = useState(false)
+
+    setTimeout(() => {
+        setShowContent(true)
+    }, 1000)
 
     useEffect(() => {
-      gsap.to(listRef.current, {top:"-200px",position:"relative"})
-    }, [])
-    
+        gsap.to(listRef.current, { top: "-200px", position: "relative" })
+    })
 
     const renderProjects = () => {
-
-        return projectsData.map((item,index) => {
-            
+        return projectsData.map((item, index) => {
             return (
-              <ProjectImage item={item} key={index} index={index} />   
+                <ProjectImage item={item} key={index} index={index} />
             )
         })
     }
 
     return (
-        <div className='page projects'>
-        <div className='page-heading'>
-            PROJECTS
-        </div>
-        <ul className='projectImages' ref={listRef}>
-            {renderProjects()}
-        </ul>
-        </div>
+        <>
+            <Loader />
+            {showContent && (<motion.div className='page projects'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ x: '-100%' }}
+                transition={{ duration: 0.5 }}>
+                <div className='page-heading'>
+                    PROJECTS
+                </div>
+                <ul className='projectImages' ref={listRef}>
+                    {renderProjects()}
+                </ul>
+            </motion.div>)}
+        </>
     )
 }
 

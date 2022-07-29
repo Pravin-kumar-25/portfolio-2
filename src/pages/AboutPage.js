@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Skills from '../components/Skills'
+import { motion } from 'framer-motion'
+import Loader from '../components/Loader'
 
-const AboutPage = () => {
+const AboutPageComponent = () => {
+  const [showContent,setShowContent] = useState(false)
+
+  setTimeout(()=> {
+      setShowContent(true)
+  },1000)
   return (
-    <div className='page about'>
+    <>
+    <Loader />
+    {showContent && (<motion.div
+      className='page about'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ x: '-100%' }}
+      transition={{ duration: 0.5 }}
+    >
       <div className='page-heading'>
         ABOUT
         <div className='home-images'>
@@ -26,7 +41,15 @@ const AboutPage = () => {
       <div className='anya'>
         <img src='/images/anya-standing.png' alt='anya' />
       </div>
-    </div>
+    </motion.div>)}
+    </>
+  )
+}
+
+const AboutPage = () => {
+
+  return (
+    <AboutPageComponent />
   )
 }
 

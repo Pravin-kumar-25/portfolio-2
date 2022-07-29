@@ -6,7 +6,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const StyledBox = styled(Box)`
     width:45%;
-  color: rgb(184, 183, 183);
+    color: rgb(184, 183, 183);
     display:flex;
     justify-content:space-evenly;
     flex-direction:column;
@@ -29,25 +29,25 @@ const StyledImageBox = styled(Box)`
 `
 
 const SkillContent = ({ skills }) => {
-    const currentActive = useSelector((state)=>state.activeSideToggle.value)
+    const currentActive = useSelector((state) => state.activeSideToggle.value)
 
     const renderList = () => {
-        return skills[currentActive].map((value)=>{
+        return skills[currentActive].map((value) => {
             return (
-            
+
                 <div className='skillList' key={value}>
                     <ArrowForwardIosIcon /> &nbsp;
                     {value}</div>
-                )
+            )
         })
     }
-    const image = "/images/skill-"+currentActive+".png"
+    const image = "/images/skill-" + currentActive + ".png"
 
     return (
         <>
             <StyledBox>{renderList()}</StyledBox>
             <StyledImageBox>
-                <img src={image} alt={currentActive} className="skillImage"/>
+                <img src={image} alt={currentActive} className="skillImage" />
             </StyledImageBox>
         </>
     )

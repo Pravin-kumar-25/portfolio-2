@@ -4,7 +4,7 @@ import ContactButton from '../components/ContactButton'
 import ContactMePage from '../components/ContactMePage'
 
 const ContactPage = () => {
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
 
     return (
         <div className='contact'>

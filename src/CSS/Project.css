@@ -35,6 +35,7 @@
     transition: .5;
     display: flex;
     justify-content: center;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
     color: white;
     align-items: center;
 }
