@@ -89,6 +89,7 @@ const ContactMeForm = () => {
         setName('')
         setLabelClass('')
         // setSuccessMessage('')
+        
         setSnack(false)
     }
 
