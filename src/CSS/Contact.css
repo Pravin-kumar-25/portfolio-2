@@ -138,24 +138,42 @@ textarea {
     /* background: red; */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .contactMe li {
     color: #C7c000;
-    list-style: none;
     display: flex;
+    gap: 10px;
     align-items: center;
+}
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 .contactMe a {
     color: white;
-    text-decoration: none;
-
 }
 
-.socialMedia {
-    background: brown;
+.socialMedia ul{
+    /* background: brown; */
+    display: flex;
+    gap: 10px;
+}
+
+.socialMedia svg {
+    width: 35px;
+    height: 35px;
+    color: #C7c000;
+}
+
+.socialMedia svg:hover {
+    color: white;
 }
 
 .createdBy {

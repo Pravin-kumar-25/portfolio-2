@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Box } from '@mui/material'
 import { TextField, Button } from '@mui/material'
 import { styled } from '@mui/material'
+import emailjs from '@emailjs/browser'
+import { Snackbar } from '@mui/material'
+import { Alert } from '@mui/material'
 
 const CssTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -28,6 +31,9 @@ const ContactMeForm = () => {
     const [name, setName] = useState('')
     const [labelClass,setLabelClass] = useState('')
     const [message,setMessage] = useState('')
+    const [successMessage,setSuccessMessage] = useState('error');
+    const [snack,setSnack] = useState(false)
+    const formRef = useRef();
     let style = {
         '& .MuiTextField-root': { m: 1, width: '41.25ch' },
         border: '0.1px solid black',
@@ -61,19 +67,52 @@ const ContactMeForm = () => {
         if(message === ''){
             setLabelClass('')
         }
-        
+    }
+
+    const onFormSubmit = (e) => {
+        e.preventDefault()
+        emailjs.sendForm('service_8b2ugsq','template_tia10n5',formRef.current,'9uxDAsY-T8kASoHlS')
+        .then((result)=> {
+            setSuccessMessage('success')
+            setSnack(true)
+            console.log(result)
+        },(error)=> {
+            console.log(error)
+            setSuccessMessage('error')
+            setSnack(true)
+        })
+    }
+
+    const onSnackClose = () => {
+        setSuccessMessage('')
+        setSnack(false)
     }
 
     const onEmailChange = (event) => {
         setEmail(event.target.value)
     }
     return (
+        <>
+        <Snackbar 
+            open={true}
+            message={successMessage}
+            // autoHideDuration={2000}
+            onClose={onSnackClose}
+        >
+            <Alert 
+            severity={successMessage}
+            >
+                {successMessage==='success' ? 'Your message reached me successfully 😃 ..!': 'OOps, something went wrong, Please try again!!!😕'}
+            </Alert>
+        </Snackbar>
         <Box className='contactForm'
             component="form"
             sx={style}
             autoComplete="off"
+            ref={formRef}
+            onSubmit={onFormSubmit}
         >
-            <h2>CONTACT ME</h2>
+            <h2>GET IN TOUCH</h2>
             <CssTextField
                 id='outlined-name'
                 required
@@ -82,6 +121,7 @@ const ContactMeForm = () => {
                 onChange={(e) => setName(e.target.value)}
                 value={name}
                 autoComplete='off'
+                name='name'
             />
             <CssTextField
                 id='outlined-name'
@@ -90,6 +130,7 @@ const ContactMeForm = () => {
                 label='Enter Email'
                 onChange={onEmailChange}
                 value={email}
+                name='email'
             />
             <div className='textArea'>
                 <label className={labelClass}
@@ -103,6 +144,7 @@ const ContactMeForm = () => {
                   onBlur={onBlur}
                   value={message}
                   onChange={(e)=>setMessage(e.target.value)}
+                  name='message'
                   />
             </div>
             <Button
@@ -110,6 +152,7 @@ const ContactMeForm = () => {
             type={'submit'}
             >PING ME</Button>
         </Box>
+        </>
     )
 }
 

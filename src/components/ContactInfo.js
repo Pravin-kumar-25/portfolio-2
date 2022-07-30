@@ -1,8 +1,8 @@
 import React from 'react'
-import useHover from '../customHooks/useHover'
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import {RiFacebookFill,RiInstagramFill,RiGithubFill,RiLinkedinFill} from 'react-icons/ri'
 
 const contactData = [
   {
@@ -19,6 +19,25 @@ const contactData = [
     text:'Rathinam nagar, Theni, Tamilnadu, India',
     link:'https://goo.gl/maps/o2p8LYAVToHsBeUX9',
     icon:<HomeOutlinedIcon />
+  }
+]
+
+const socialMediaData = [
+  {
+    icon:  <RiInstagramFill />,
+    link:'https://www.instagram.com/__p_r_a_v_i_n___/'
+  },
+  {
+    icon: <RiFacebookFill />,
+    link:'https://www.facebook.com/pravin.kumar25M/'
+  },
+  {
+    icon: <RiGithubFill />,
+    link:'https://github.com/Pravin-kumar-25'
+  },
+  {
+    icon: <RiLinkedinFill />,
+    link:'https://www.linkedin.com/in/pravin-kumar-m-751576203/'
   }
 ]
 
@@ -40,6 +59,25 @@ const renderList = () => {
   )
 }
 
+const renderSocialMedia = () => {
+  return (
+    <ul>
+      {socialMediaData.map((data)=> {
+        return (
+          <li>
+            <a href={data.link}
+            target='_black' rel="noopener noreferrer"
+            >
+              {data.icon}
+              {/* <img src={data.icon} alt={data.icon} /> */}
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  )
+}
+
 const ContactInfo = () => {
   return (
     <div className='contactInfo'>
@@ -47,7 +85,9 @@ const ContactInfo = () => {
         <div className='contactMe'>
           {renderList()}
         </div>
-        <div className='socialMedia'></div>
+        <div className='socialMedia'>
+          {renderSocialMedia()}
+        </div>
       </div>
       <div className='createdBy'>
         <p>Created By Pravin kumar</p>
