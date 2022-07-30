@@ -5,6 +5,7 @@ import { styled } from '@mui/material'
 import emailjs from '@emailjs/browser'
 import { Snackbar } from '@mui/material'
 import { Alert } from '@mui/material'
+import { Slide } from '@mui/material'
 
 const CssTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -75,16 +76,19 @@ const ContactMeForm = () => {
         .then((result)=> {
             setSuccessMessage('success')
             setSnack(true)
-            console.log(result)
         },(error)=> {
-            console.log(error)
             setSuccessMessage('error')
             setSnack(true)
         })
+        
     }
 
     const onSnackClose = () => {
-        setSuccessMessage('')
+        setMessage('')
+        setEmail('')
+        setName('')
+        setLabelClass('')
+        // setSuccessMessage('')
         setSnack(false)
     }
 
@@ -94,13 +98,15 @@ const ContactMeForm = () => {
     return (
         <>
         <Snackbar 
-            open={true}
+            open={snack}
             message={successMessage}
-            // autoHideDuration={2000}
+            autoHideDuration={2000}
             onClose={onSnackClose}
+            // TransitionComponent={<Slide direction='up' />}
         >
             <Alert 
             severity={successMessage}
+            // onClose={onSnackClose}
             >
                 {successMessage==='success' ? 'Your message reached me successfully 😃 ..!': 'OOps, something went wrong, Please try again!!!😕'}
             </Alert>
@@ -145,6 +151,7 @@ const ContactMeForm = () => {
                   value={message}
                   onChange={(e)=>setMessage(e.target.value)}
                   name='message'
+                  required
                   />
             </div>
             <Button

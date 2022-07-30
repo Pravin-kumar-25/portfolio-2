@@ -46,7 +46,7 @@ const renderList = () => {
     <ul>
       {contactData.map((data)=> {
         return (
-          <li>
+          <li key={data.text}>
             {data.icon}
             <a href={data.link} 
              target={data.link.includes('https') ? '_black': ''} rel="noopener noreferrer">
@@ -64,7 +64,7 @@ const renderSocialMedia = () => {
     <ul>
       {socialMediaData.map((data)=> {
         return (
-          <li>
+          <li key={data.link}>
             <a href={data.link}
             target='_black' rel="noopener noreferrer"
             >
