@@ -38,8 +38,8 @@ const Map = () => {
             <MyMap 
                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCJxwYZ3jRzF3FATO6NB-KLIgrRzUnQ6Sc&language=na"
                 loadingElement={<MapLoader />}
-                containerElement={<div style={{ height: `100%`,background:'red' }} />}
-                mapElement={<div style={{ height: `100%`,background:'red' }} />}
+                containerElement={<div style={{ height: `100%`,background:'#2e2e2e' }} />}
+                mapElement={<div style={{ height: `100%`,background:'#2e2e2e' }} />}
             />
         </div>
     )
