@@ -12,18 +12,18 @@ function App() {
 
   return (
     <>
-    <div className="App">
-      <Cursor />
-      <Router>
-        <Navbar />
-        <div className='container'>
-          <AllRoutes />
-        </div>
-      </Router>
-      <ContactPage />
-    </div>
+      <div className="App">
+        <Cursor />
+        <Router>
+          <Navbar />
+          <div className='container'>
+            <AllRoutes />
+          </div>
+        </Router>
+        <ContactPage />
+      </div>
       <div className='phone'>
-        Please view it in larger screen devices.. 
+        Please view it in larger screen devices..
       </div>
     </>
 

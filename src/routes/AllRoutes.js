@@ -6,7 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { lazy, Suspense } from 'react';
-import { CircularProgress } from '@mui/material';
+import CircularProgressComp from '../components/CircularProgressComp';
 
 const About = lazy(() => import('../pages/AboutPage'))
 const Home = lazy(() => import('../pages/HomePage'))
@@ -19,23 +19,22 @@ const AllRoutes = () => {
     <AnimatePresence exitBeforeEnter>
       <Routes key={location.pathname} location={location}>
         <Route exact path="/" element={
-          <Suspense fallback={<CircularProgress />}>
+          <Suspense fallback={<CircularProgressComp />}>
             <Home />
           </Suspense>
         } />
         <Route exact path="/about" element={
-          <Suspense fallback={<CircularProgress />}>
+          <Suspense fallback={<CircularProgressComp />}>
             <About />
           </Suspense>
         } />
         <Route exact path="/project" element={
-          <Suspense fallback={<CircularProgress />}>
+          <Suspense fallback={<CircularProgressComp />}>
             <Project />
           </Suspense>
         } />
       </Routes>
     </AnimatePresence>
-
   )
 }
 

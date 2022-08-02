@@ -310,6 +310,15 @@ button:hover {
   background: black;
 }
 
+.circularProgress {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width:1000px) {
   .App {
     display: none;
