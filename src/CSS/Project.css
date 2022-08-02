@@ -1,64 +1,100 @@
-.projectImage img{
-    width: 300px;
-    height: 300px;
-    transition: .5s ease;
-    object-fit: cover;
-    display: block;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-.projectImage{
-    width: 300px;
-    height: 300px;
-    position: relative;
-    transition: 0.5s ease;
-    overflow: hidden;
-}
-
-.projectImage:hover {
-    transform: scale(1.3);
-}
-
-.projectImages {
+.allProjects {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 50px;
+    flex-direction: column;
     list-style: none;
-}
-
-.hoverImageDiv {
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 0;
-    transition: .5;
-    display: flex;
-    justify-content: center;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
-    color: white;
-    align-items: center;
-}
-
-.projectDescription {
-    position: relative;
-    width: 75%;
-    font-size: 13px;
-}
-
-.imageTitle {
-    width: 100%;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    position: absolute;
-    bottom: 0;
-    display: grid;
-    place-items: center;
-    font-weight: 600;
-    font-size: 25px ;
 }
 
 .projects {
     flex-direction: column;
+    justify-content: none;
+
+}
+
+.projectDiv {
+    height: 600px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.invertedProjectDiv {
+    flex-direction: row-reverse;
+}
+
+.invertedProjectDiv .projectDescription {
+    left: -60px;
+}
+
+.invertedProjectDiv .projectImage {
+    justify-content: flex-start;
+}
+
+.projectImage {
+    height: 450px;
+    width: 550px;
+    background: #C7c000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 0;
+    transition: 0.5s ease;
+}
+
+.projectImage img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    backdrop-filter: blur(20px);
+}
+
+.projectImage:hover {
+    transform: scale(0.95)
+}
+
+.projectImage::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 440px;
+    height: 360px;
+    background: rgba(0, 0, 0, 0.6);
+    transition: 0.5s ease;
+}
+
+.projectImage:hover::after {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.projectDescription {
+    color: white;
+    /* background: green; */
+    position: relative;
+    width: 350px;
+    left: 60px;
+    z-index: 2;
+}
+
+.projectDescription h3 {
+    /* font-family: 'Poppins', sans-serif; */
+    color: #0089d9 !important;
+}
+
+.projectDescription a {
+    font-size: 25px;
+    color: white;
+    /* text-decoration: underline; */
+    border-bottom: 2.5px solid;
+    /* text-decoration-thickness: 2.5px; */
+}
+
+.projectDescription a:hover {
+    color: #C7c000;
 }

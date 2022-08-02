@@ -16,7 +16,7 @@ const ContactButton = ({ setActive }) => {
     
 
     let style = {
-        position: 'absolute',
+        position: 'fixed',
         right: '0',
         bottom: '200px',
         color: 'black',

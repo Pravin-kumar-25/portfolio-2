@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import ProjectImage from './ProjectImage'
-import gsap from 'gsap'
 import { motion } from 'framer-motion'
 import Loader from './Loader'
 
@@ -11,10 +10,6 @@ const Projects = () => {
     setTimeout(() => {
         setShowContent(true)
     }, 1000)
-
-    useEffect(() => {
-        gsap.to(listRef.current, { top: "-200px", position: "relative" })
-    })
 
     const renderProjects = () => {
         return projectsData.map((item, index) => {
@@ -35,7 +30,7 @@ const Projects = () => {
                 <div className='page-heading'>
                     PROJECTS
                 </div>
-                <ul className='projectImages' ref={listRef}>
+                <ul className='allProjects' ref={listRef}>
                     {renderProjects()}
                 </ul>
             </motion.div>)}
