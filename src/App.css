@@ -22,6 +22,12 @@ a {
   overflow: hidden;
 }
 
+.phone {
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -302,4 +308,17 @@ button:hover {
 
 .load2 {
   background: black;
+}
+
+@media screen and (max-width:1000px) {
+  .App {
+    display: none;
+  }
+  .phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 17px;
+  }
 }

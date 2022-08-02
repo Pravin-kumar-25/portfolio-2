@@ -11,6 +11,7 @@ function App() {
 
 
   return (
+    <>
     <div className="App">
       <Cursor />
       <Router>
@@ -21,6 +22,11 @@ function App() {
       </Router>
       <ContactPage />
     </div>
+      <div className='phone'>
+        Please view it in larger screen devices.. 
+      </div>
+    </>
+
   );
 }
 
