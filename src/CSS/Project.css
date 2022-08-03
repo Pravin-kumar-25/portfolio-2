@@ -56,7 +56,7 @@
 }
 
 .projectImage:hover {
-    transform: scale(0.95)
+    /* transform: scale(0.95) */
 }
 
 .projectImage::after {
