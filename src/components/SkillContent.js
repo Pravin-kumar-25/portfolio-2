@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { styled } from '@mui/material'
 import { Box } from '@mui/material'
 import { useSelector } from 'react-redux'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import gsap from 'gsap';
 
 const StyledBox = styled(Box)`
     width:45%;
@@ -26,10 +27,25 @@ const StyledImageBox = styled(Box)`
     border-left:0px;
     border-top-right-radius:20px;
     border-bottom-right-radius:20px;
+    overflow:hidden
 `
 
 const SkillContent = ({ skills }) => {
     const currentActive = useSelector((state) => state.activeSideToggle.value)
+
+    useEffect(() => {
+        gsap.from('.skillList', {
+            x: '-100px',
+            opacity: 0,
+            stagger: 0.2
+        })
+        gsap.from('.skillImage', {
+            opacity: 0,
+            x: '100px',
+            //   duration:'1s'
+        })
+    })
+
 
     const renderList = () => {
         return skills[currentActive].map((value) => {
