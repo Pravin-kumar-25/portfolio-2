@@ -137,6 +137,7 @@ const ContactMeForm = () => {
                 onChange={onEmailChange}
                 value={email}
                 name='email'
+                type={'email'}
             />
             <div className='textArea'>
                 <label className={labelClass}
