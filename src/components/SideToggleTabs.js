@@ -2,7 +2,6 @@ import React from 'react'
 import SideToggle from './SideToggle'
 
 const SideToggleTabs = ({ skills }) => {
-    console.log(skills)
 
     const getSideTabs = () => {
         const tabKeys = Object.keys(skills)

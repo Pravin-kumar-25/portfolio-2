@@ -1,25 +1,25 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
-import { useEffect,useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const ProjectImage = ({ item,index }) => {
+const ProjectImage = ({ item, index }) => {
     const descRef = useRef(null)
 
-    useEffect(()=> {
+    useEffect(() => {
         const descEl = descRef.current
         gsap.fromTo(descEl, {
-            opacity:0,
-            x:'100px' ,
+            opacity: 0,
+            x: '100px',
         }, {
-            opacity:1,
-            x:0,
-            scrollTrigger:{
-                trigger:descEl,
-                toggleActions:'restart none none reset',
-                start:'top 80%'
+            opacity: 1,
+            x: 0,
+            scrollTrigger: {
+                trigger: descEl,
+                toggleActions: 'restart none none reset',
+                start: 'top 80%'
             }
         })
         // gsap.fromTo(imageEl, {
@@ -32,12 +32,12 @@ const ProjectImage = ({ item,index }) => {
         //         trigger:imageEl
         //     }
         // })
-    },[])
-    
+    }, [])
+
     return (
 
         <li
-            className={`projectDiv ${index%2!==0 ? 'invertedProjectDiv': ''}`}
+            className={`projectDiv ${index % 2 !== 0 ? 'invertedProjectDiv' : ''}`}
         >
             <div className='projectDescription' ref={descRef}>
                 <h3>{item.title}</h3>

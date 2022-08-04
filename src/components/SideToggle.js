@@ -6,21 +6,21 @@ import { changeToggle } from '../redux/reducer'
 const SideToggle = ({ value }) => {
     const currentActive = useSelector((state) => state.activeSideToggle.value)
     const dispatch = useDispatch()
-    
+
     let style = {}
     let hoverClass = "";
     if (value === currentActive) {
         style = {
             border: '1px solid white',
             "borderRight": "0px",
-            borderTopLeftRadius:"10px",
-            borderBottomLeftRadius:"10px",
+            borderTopLeftRadius: "10px",
+            borderBottomLeftRadius: "10px",
             textTransform: "uppercase"
         }
     } else {
         style = {
-            border:"1px solid transparent",
-            borderRight:"1px solid white"
+            border: "1px solid transparent",
+            borderRight: "1px solid white"
         }
         hoverClass = "activeToggle"
     }

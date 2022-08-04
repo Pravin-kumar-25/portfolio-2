@@ -342,6 +342,7 @@ button:hover {
   .App {
     display: none;
   }
+
   .phone {
     display: flex;
     justify-content: center;

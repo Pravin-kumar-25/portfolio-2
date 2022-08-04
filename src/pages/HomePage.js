@@ -14,57 +14,57 @@ const HomePage = () => {
     const heading2 = useRef()
     const heading3 = useRef()
     const heading4 = useRef()
-    const [showContent,setShowContent] = useState(false)
+    const [showContent, setShowContent] = useState(false)
 
-    setTimeout(()=> {
+    setTimeout(() => {
         setShowContent(true)
-    },1000)
+    }, 1000)
 
     const hoverRef = useCursorHover()
-    
+
 
     useEffect(() => {
-        if(showContent) {
+        if (showContent) {
 
-        gsap.fromTo(nameRef.current, {
-            translateY: "-500px",
-        }, {
-            delay: "0.5",
-            translateY: "0px"
-        });
-        const headings = [
-            heading1.current,
-            heading2.current,
-        ]
-        const nextHeadings = [
-            heading3.current,
-            heading4.current,
-        ]
-        let t1 = gsap.timeline({delay:2})
-        t1.fromTo(headings, {
-            scale: 0
-        }, {
-            scale: 1,
-            stagger: 1
-        })
-        t1.fromTo(nextHeadings, {
-            scale: 0
-        }, {
-            scale: 1,
-            stagger: 0.5
-        })
-        t1.fromTo('.home-images img', {
-            opacity: 0
-        }, {
-            opacity: 1
-        })
-    }
+            gsap.fromTo(nameRef.current, {
+                translateY: "-500px",
+            }, {
+                delay: "0.5",
+                translateY: "0px"
+            });
+            const headings = [
+                heading1.current,
+                heading2.current,
+            ]
+            const nextHeadings = [
+                heading3.current,
+                heading4.current,
+            ]
+            let t1 = gsap.timeline({ delay: 2 })
+            t1.fromTo(headings, {
+                scale: 0
+            }, {
+                scale: 1,
+                stagger: 1
+            })
+            t1.fromTo(nextHeadings, {
+                scale: 0
+            }, {
+                scale: 1,
+                stagger: 0.5
+            })
+            t1.fromTo('.home-images img', {
+                opacity: 0
+            }, {
+                opacity: 1
+            })
+        }
 
     }, [showContent]);
 
     return (
         <>
-        <Loader />
+            <Loader />
             {showContent && (<motion.div className='page'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

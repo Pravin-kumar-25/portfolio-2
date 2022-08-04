@@ -7,9 +7,9 @@ import { CircularProgress } from '@mui/material'
 const MapLoader = () => {
     return (
         <div className='mapLoader'>
-            <CircularProgress 
+            <CircularProgress
                 sx={{
-                    color:'#C7c000'
+                    color: '#C7c000'
                 }}
             />
         </div>
@@ -20,12 +20,12 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={10}
         defaultCenter={{ lat: 10.009708, lng: 77.477366 }}
-        options={{styles:mapStyle, disableDefaultUI:true}}
+        options={{ styles: mapStyle, disableDefaultUI: true }}
     >
-        <Marker position={{lat:10.009708,lng:77.477366}}
+        <Marker position={{ lat: 10.009708, lng: 77.477366 }}
             icon={{
-                url:'/images/mapMe.png',
-                scaledSize: new window.google.maps.Size(35,70)
+                url: '/images/mapMe.png',
+                scaledSize: new window.google.maps.Size(35, 70)
             }}
             animation={window.google.maps.Animation.DROP}
         />
@@ -36,11 +36,11 @@ const Map = () => {
 
     return (
         <div className='mapDiv'>
-            <MyMap 
+            <MyMap
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_MAP_API_KEY}&language=na`}
                 loadingElement={<MapLoader />}
-                containerElement={<div style={{ height: `100%`,background:'#2e2e2e' }} />}
-                mapElement={<div style={{ height: `100%`,background:'#2e2e2e' }} />}
+                containerElement={<div style={{ height: `100%`, background: '#2e2e2e' }} />}
+                mapElement={<div style={{ height: `100%`, background: '#2e2e2e' }} />}
             />
         </div>
     )

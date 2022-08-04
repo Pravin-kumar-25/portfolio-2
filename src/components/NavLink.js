@@ -8,10 +8,10 @@ const NavLink = ({ link, path, isSelected }) => {
 
     return (
         <div className={`link ${isSelected ? 'selected' : null}`}
-        //  onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} 
-        ref={hoverRef}
+            //  onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} 
+            ref={hoverRef}
         >
-            <Link to={path} style={{color:isSelected ? 'white': 'black'}}>
+            <Link to={path} style={{ color: isSelected ? 'white' : 'black' }}>
                 {link}
             </Link>
         </div>

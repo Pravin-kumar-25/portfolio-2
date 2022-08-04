@@ -7,7 +7,7 @@ const createEmbedUrl = (sourceUrl, theme = 0) => {
     if (sourceUrl.length < 5) { return null };
     const strippedUrl = sourceUrl.includes("iframe") ? sourceUrl.match(urlRegex)[1].replace(`"`, "") : sourceUrl; const url = new URL(strippedUrl);
     if (!url.pathname.includes("embed")) { url.pathname = `/embed${url.pathname}` };
-    url.search = `theme=${theme}`; 
+    url.search = `theme=${theme}`;
     return url.toString();
 };
 

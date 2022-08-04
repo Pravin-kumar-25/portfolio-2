@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const activeSideToggle = createSlice({
-    name:"activeSideToggle",
-    initialState:{
-        value:"Backend"
+    name: "activeSideToggle",
+    initialState: {
+        value: "Backend"
     },
-    reducers:{
-        changeToggle:(state,action) => {
+    reducers: {
+        changeToggle: (state, action) => {
             state.value = action.payload
         }
     }
