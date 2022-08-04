@@ -25,13 +25,6 @@ const HomePage = () => {
 
     useEffect(() => {
         if (showContent) {
-
-            gsap.fromTo(nameRef.current, {
-                translateY: "-500px",
-            }, {
-                delay: "0.5",
-                translateY: "0px"
-            });
             const headings = [
                 heading1.current,
                 heading2.current,
@@ -41,11 +34,17 @@ const HomePage = () => {
                 heading4.current,
             ]
             let t1 = gsap.timeline({ delay: 2 })
+            t1.fromTo(nameRef.current, {
+                translateY: "-500px",
+            }, {
+                delay: "0.5",
+                translateY: "0px"
+            });
             t1.fromTo(headings, {
                 scale: 0
             }, {
                 scale: 1,
-                stagger: 1
+                stagger: 0.5
             })
             t1.fromTo(nextHeadings, {
                 scale: 0
