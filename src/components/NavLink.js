@@ -18,4 +18,4 @@ const NavLink = ({ link, path, isSelected }) => {
     )
 }
 
-export default NavLink
+export default React.memo(NavLink)

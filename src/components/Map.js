@@ -6,7 +6,11 @@ import { CircularProgress } from '@mui/material'
 
 const MapLoader = () => {
     return (
-        <div className='mapLoader'>
+        <div className='mapLoader' style={{
+            display:'flex',
+            justifyContent:'center',
+            alignItems:'center'
+        }}>
             <CircularProgress
                 sx={{
                     color: '#C7c000'

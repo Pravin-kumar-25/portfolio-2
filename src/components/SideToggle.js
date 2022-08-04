@@ -35,4 +35,4 @@ const SideToggle = ({ value }) => {
     )
 }
 
-export default SideToggle
+export default React.memo(SideToggle)
