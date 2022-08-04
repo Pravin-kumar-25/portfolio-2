@@ -6,7 +6,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import { lazy, Suspense } from 'react';
-import CircularProgressComp from '../components/CircularProgressComp';
 
 const About = lazy(() => import('../pages/AboutPage'))
 const Home = lazy(() => import('../pages/HomePage'))

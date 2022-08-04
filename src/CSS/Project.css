@@ -49,8 +49,8 @@
 }
 
 .projectImage img {
-    width: 80%;
-    height: 80%;
+    width: 440px;
+    height: 360px;
     object-fit: cover;
     backdrop-filter: blur(20px);
 }
