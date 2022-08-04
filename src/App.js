@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import AllRoutes from './routes/AllRoutes';
 import ContactPage from './pages/ContactPage';
-import Spotify from './components/Spotify';
 
 function App() {
 
