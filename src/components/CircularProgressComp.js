@@ -9,4 +9,4 @@ const CircularProgressComp = () => {
   )
 }
 
-export default CircularProgressComp
+export default React.memo(CircularProgressComp)

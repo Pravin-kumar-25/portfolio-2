@@ -3,41 +3,6 @@ import ProjectImage from './ProjectImage'
 import { motion } from 'framer-motion'
 import Loader from './Loader'
 
-const Projects = () => {
-    const listRef = useRef()
-    const [showContent, setShowContent] = useState(false)
-
-    setTimeout(() => {
-        setShowContent(true)
-    }, 1000)
-
-    const renderProjects = () => {
-        return projectsData.map((item, index) => {
-            return (
-                <ProjectImage item={item} key={index} index={index} />
-            )
-        })
-    }
-
-    return (
-        <>
-            <Loader />
-            {showContent && (<motion.div className='page projects'
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ x: '-100%' }}
-                transition={{ duration: 0.5 }}>
-                <div className='page-heading'>
-                    PROJECTS
-                </div>
-                <ul className='allProjects' ref={listRef}>
-                    {renderProjects()}
-                </ul>
-            </motion.div>)}
-        </>
-    )
-}
-
 const projectsData = [
     {
         img: '/images/Portfolio.png',
@@ -58,5 +23,41 @@ const projectsData = [
         link: 'https://pravi-building.netlify.app'
     }
 ]
+
+const Projects = () => {
+    const listRef = useRef()
+    const [showContent, setShowContent] = useState(false)
+
+    setTimeout(() => {
+        setShowContent(true)
+    }, 1000)
+
+    const renderProjects = React.useCallback(() => {
+        console.log("here")
+        return projectsData.map((item, index) => {
+            return (
+                <ProjectImage item={item} key={index} index={index} />
+            )
+        })
+    },[])
+
+    return (
+        <>
+            <Loader />
+            {showContent && (<motion.div className='page projects'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ x: '-100%' }}
+                transition={{ duration: 0.5 }}>
+                <div className='page-heading'>
+                    PROJECTS
+                </div>
+                <ul className='allProjects' ref={listRef}>
+                    {renderProjects()}
+                </ul>
+            </motion.div>)}
+        </>
+    )
+}
 
 export default Projects

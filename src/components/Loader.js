@@ -10,7 +10,7 @@ const variants = {
     }
 }
 
-const Loader = () => {
+const Loader = React.memo(() => {
     const [animate, setAnimate] = useState('comeIn')
 
     setTimeout(() => {
@@ -35,6 +35,6 @@ const Loader = () => {
             </motion.div>
         </>
     )
-}
+})
 
 export default Loader

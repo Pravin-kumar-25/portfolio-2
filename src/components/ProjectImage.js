@@ -52,4 +52,4 @@ const ProjectImage = ({ item, index }) => {
     )
 }
 
-export default ProjectImage
+export default React.memo(ProjectImage)

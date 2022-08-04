@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import useHover from '../customHooks/useHover';
 import gsap from 'gsap';
 
-const ContactButton = ({ setActive }) => {
+const ContactButton = React.memo(({ setActive }) => {
     const [buttonRef, isHovering] = useHover()
     const textRef = useRef()
 
@@ -43,6 +43,6 @@ const ContactButton = ({ setActive }) => {
             {!isHovering ? <SendIcon /> : <span ref={textRef}>Contact</span>}
         </Button>
     )
-}
+})
 
 export default ContactButton

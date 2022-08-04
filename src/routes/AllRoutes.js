@@ -19,17 +19,17 @@ const AllRoutes = () => {
     <AnimatePresence exitBeforeEnter>
       <Routes key={location.pathname} location={location}>
         <Route exact path="/" element={
-          <Suspense fallback={<CircularProgressComp />}>
+          <Suspense fallback={null}>
             <Home />
           </Suspense>
         } />
         <Route exact path="/about" element={
-          <Suspense fallback={<CircularProgressComp />}>
+          <Suspense fallback={null}>
             <About />
           </Suspense>
         } />
         <Route exact path="/project" element={
-          <Suspense fallback={<CircularProgressComp />}>
+          <Suspense fallback={null}>
             <Project />
           </Suspense>
         } />
