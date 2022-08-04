@@ -25,9 +25,9 @@ function App() {
       <div className='phone'>
         Please view it in larger screen devices..
       </div>
-      <div className='spotify'>
+      {/* <div className='spotify'>
         <Spotify />
-      </div>
+      </div> */}
     </>
 
   );
