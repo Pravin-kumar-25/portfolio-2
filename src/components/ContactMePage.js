@@ -37,4 +37,4 @@ const ContactMePage = ({ active, setActive }) => {
     )
 }
 
-export default ContactMePage
+export default React.memo(ContactMePage)

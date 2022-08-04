@@ -22,7 +22,6 @@ const HomePage = () => {
 
     const hoverRef = useCursorHover()
 
-
     useEffect(() => {
         if (showContent) {
             const headings = [

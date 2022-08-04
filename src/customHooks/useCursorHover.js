@@ -12,7 +12,7 @@ const useCursorHover = () => {
             document.getElementById('curs').style.width ='20px'
             document.getElementById('curs').style.height ='20px'
         }
-    })
+    },[isHovering])
     return hoverRef
 }
 

@@ -20,7 +20,7 @@ const MapLoader = () => {
     )
 }
 
-const MyMap = withScriptjs(withGoogleMap((props) =>
+const MyMap = React.memo(withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={10}
         defaultCenter={{ lat: 10.009708, lng: 77.477366 }}
@@ -34,7 +34,7 @@ const MyMap = withScriptjs(withGoogleMap((props) =>
             animation={window.google.maps.Animation.DROP}
         />
     </GoogleMap>
-))
+)))
 
 const Map = () => {
 
@@ -50,4 +50,4 @@ const Map = () => {
     )
 }
 
-export default Map
+export default React.memo(Map)
