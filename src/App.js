@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import AllRoutes from './routes/AllRoutes';
 import ContactPage from './pages/ContactPage';
+import Spotify from './components/Spotify';
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
       </div>
       <div className='phone'>
         Please view it in larger screen devices..
+      </div>
+      <div className='spotify'>
+        <Spotify />
       </div>
     </>
 

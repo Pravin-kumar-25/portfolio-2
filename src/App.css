@@ -351,3 +351,7 @@ button:hover {
     font-size: 17px;
   }
 }
+
+.spotify {
+  position: absolute;
+}
