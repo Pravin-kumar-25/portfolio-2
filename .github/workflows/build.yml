@@ -1,0 +1,8 @@
+name: Reverse-sync Smoke suite
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+  name : Repo
